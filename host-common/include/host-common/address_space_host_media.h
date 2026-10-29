@@ -19,6 +19,7 @@
 #include "host-common/MediaVpxDecoder.h"
 #include "host-common/MediaH264Decoder.h"
 #include "host-common/MediaHevcDecoder.h"
+#include "host-common/MediaVideoEncoder.h"
 
 #include <unordered_map>
 
@@ -57,6 +58,7 @@ private:
     std::unique_ptr<MediaVpxDecoder> mVpxDecoder;
     std::unique_ptr<MediaH264Decoder> mH264Decoder;
     std::unique_ptr<MediaHevcDecoder> mHevcDecoder;
+    std::unique_ptr<MediaVideoEncoder> mVideoEncoder;
     void* mHostBuffer = nullptr;
     const address_space_device_control_ops* mControlOps = 0;
     uint64_t mGuestAddr = 0;

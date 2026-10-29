@@ -23,7 +23,9 @@ enum class MediaCodecType : uint8_t {
     VP9Codec = 1,
     H264Codec = 2,
     HevcCodec = 3,
-    Max = 4,
+    H264Encoder = 4,
+    HevcEncoder = 5,
+    Max = 6,
 };
 
 enum class MediaOperation : uint8_t {
@@ -34,7 +36,8 @@ enum class MediaOperation : uint8_t {
     Flush = 4,
     Reset = 5,
     SendMetadata = 6,
-    Max = 7,
+    EncodeImage = 7,
+    Max = 8,
 };
 
 struct MetadataParam {
