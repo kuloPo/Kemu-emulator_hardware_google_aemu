@@ -60,6 +60,7 @@ private:
     std::unique_ptr<MediaHevcDecoder> mHevcDecoder;
     std::unique_ptr<MediaVideoEncoder> mVideoEncoder;
     void* mHostBuffer = nullptr;
+    std::shared_ptr<void> mHostBufferOwner;
     const address_space_device_control_ops* mControlOps = 0;
     uint64_t mGuestAddr = 0;
 };

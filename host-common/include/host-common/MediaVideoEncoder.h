@@ -14,11 +14,13 @@ class MediaVideoEncoder {
   ~MediaVideoEncoder();
   // Bit 0: AVC, bit 1: HEVC. Only advertise encoders actually usable here.
   static uint32_t supportedCodecs();
-  void handlePing(MediaCodecType codec, MediaOperation op, void* memory);
+  void handlePing(MediaCodecType codec, MediaOperation op,
+                  const std::shared_ptr<void>& memory);
+  void waitForIdle();
 
  private:
   struct Impl;
-  std::unique_ptr<Impl> mImpl;
+  std::shared_ptr<Impl> mImpl;
 };
 }  // namespace emulation
 }  // namespace android
